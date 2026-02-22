@@ -10,12 +10,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-image: url('img/IMG_5413.JPG');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-color: #b0c4de; 
+            /* Imagens de fundo removidas */
+            background-color: #ffe6f2; /* Novo fundo rosa suave */
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -40,15 +36,17 @@
             transform: translateY(0);
         }
 
+        /* EFEITO DE VIDRO + NEON ROSA */
         .glass-panel {
             background: rgba(255, 255, 255, 0.70); 
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-radius: 24px;
-            border: 2px solid rgba(0, 198, 255, 0.9);
-            box-shadow: 0 0 15px rgba(0, 198, 255, 0.8), 
-                        0 0 35px rgba(0, 114, 255, 0.6), 
-                        inset 0 0 20px rgba(0, 198, 255, 0.5);
+            /* Borda e brilho Neon Rosa */
+            border: 2px solid rgba(255, 0, 127, 0.9);
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.8), 
+                        0 0 35px rgba(255, 105, 180, 0.6), 
+                        inset 0 0 20px rgba(255, 0, 127, 0.5);
             box-sizing: border-box;
             position: relative;
             text-align: center;
@@ -60,7 +58,7 @@
             font-size: 32px;
             font-weight: 800;
             margin: 0 0 5px 0;
-            color: #0072ff;
+            color: #ff007f; /* Rosa vibrante */
             letter-spacing: -1px;
             text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
         }
@@ -89,7 +87,7 @@
             font-weight: 800;
             margin-top: 0;
             margin-bottom: 20px;
-            color: #0072ff;
+            color: #ff007f; /* Rosa vibrante */
         }
 
         .info-container ul {
@@ -108,20 +106,20 @@
         }
 
         .info-container li::marker {
-            color: #0084ff;
+            color: #ff007f; /* Marcador rosa */
             font-weight: bold;
             font-size: 16px;
         }
 
         .info-container a {
-            color: #0072ff;
+            color: #ff007f; /* Link rosa */
             text-decoration: none;
             font-weight: 800;
             transition: color 0.3s ease;
         }
 
         .info-container a:hover {
-            color: #00c6ff;
+            color: #ff66b2; /* Rosa mais claro no hover */
             text-decoration: underline;
         }
 
@@ -160,8 +158,8 @@
         }
 
         input:focus {
-            border-color: #00c6ff;
-            box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+            border-color: #ff66b2; /* Borda rosa ao clicar */
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
             background: #ffffff;
         }
 
@@ -178,7 +176,8 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            /* Gradiente Rosa */
+            background: linear-gradient(135deg, #ff66b2, #ff007f);
             color: white;
             border: none;
             padding: 16px;
@@ -190,13 +189,13 @@
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 6px 15px rgba(0, 114, 255, 0.3);
+            box-shadow: 0 6px 15px rgba(255, 0, 127, 0.3);
             font-family: 'Montserrat', sans-serif;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 114, 255, 0.5);
+            box-shadow: 0 8px 20px rgba(255, 0, 127, 0.5);
             filter: brightness(1.1);
         }
 
@@ -222,8 +221,9 @@
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 16px;
-            border: 1px solid rgba(0, 198, 255, 0.4);
-            box-shadow: 0 4px 15px rgba(0, 198, 255, 0.15);
+            /* Borda da caixa de resultado rosa */
+            border: 1px solid rgba(255, 0, 127, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.15);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -265,7 +265,7 @@
             display: block;
             width: 100%;
             box-sizing: border-box;
-            background: #25D366;
+            background: #25D366; /* Mantido verde do WhatsApp, mas pode ser rosa se quiser */
             animation: pulse 2s infinite;
         }
 
@@ -289,7 +289,7 @@
         }
 
         .btn-voltar:hover {
-            color: #0072ff;
+            color: #ff007f; /* Hover rosa */
         }
 
         .site-footer {
@@ -323,7 +323,7 @@
         }
 
         .footer-link:hover {
-            color: #0072ff;
+            color: #ff007f; /* Hover rosa */
             transform: translateY(-2px);
         }
 
@@ -332,11 +332,40 @@
             font-weight: 800;
         }
 
-        @media (max-width: 480px) {
-            .site-footer { gap: 10px; }
-            .footer-link { font-size: 10px; }
-            h1.main-title { font-size: 28px; }
-            .result-value { font-size: 28px; }
+        @media (max-width: 768px) {
+            /* Fundo de celular removido */
+            .info-container {
+                padding: 25px 20px;
+            }
+            .calculator-container {
+                padding: 30px 20px;
+            }
+            h1.main-title {
+                font-size: 26px;
+            }
+            .info-container h2 {
+                font-size: 18px;
+            }
+            .info-container ul {
+                font-size: 12px;
+            }
+            .info-container li {
+                margin-bottom: 10px;
+            }
+            .notion-link {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+            .result-value {
+                font-size: 28px;
+            }
+            .site-footer {
+                gap: 12px;
+                padding: 10px 0;
+            }
+            .footer-link {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
