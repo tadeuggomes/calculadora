@@ -10,14 +10,19 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-image: url('img/eed98360-f97c-445d-b936-f9a50be92176.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #F7CAC9 0%, #e2dcf4 100%);
+            background-size: 200% 200%;
+            animation: gradientBG 10s ease infinite;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            color: #333;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .screen {
@@ -40,14 +45,13 @@
         }
 
         .glass-panel {
-            background: rgba(255, 255, 255, 0.70); 
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 24px;
-            border: 2px solid rgba(255, 0, 127, 0.9);
-            box-shadow: 0 0 15px rgba(255, 0, 127, 0.8), 
-                        0 0 35px rgba(255, 105, 180, 0.6), 
-                        inset 0 0 20px rgba(255, 0, 127, 0.5);
+            background: rgba(255, 255, 255, 0.75); 
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05), 
+                        inset 0 0 10px rgba(255, 255, 255, 0.4);
             box-sizing: border-box;
             position: relative;
             text-align: center;
@@ -59,33 +63,33 @@
             font-size: 32px;
             font-weight: 800;
             margin: 0 0 5px 0;
-            color: #ff007f; 
+            color: #d48a89;
             letter-spacing: -1px;
-            text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
+            text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.8);
         }
 
         .handle {
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
-            color: #333;
+            color: #666;
             font-weight: 700;
             margin-bottom: 15px;
             letter-spacing: 0.5px;
         }
 
         .profile-img {
-            width: 100px;
-            height: 100px;
+            width: 450px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 12px;
-            border: 2px solid rgba(255, 0, 127, 0.8);
-            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+            border-radius: 16px;
+            border: 3px solid #fff;
+            box-shadow: 0 5px 15px rgba(247, 202, 201, 0.6);
             margin-bottom: 25px;
         }
 
         .info-container {
-            padding: 35px 30px;
-            max-width: 600px;
+            padding: 40px 30px;
+            max-width: 650px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -98,16 +102,16 @@
             font-weight: 800;
             margin-top: 0;
             margin-bottom: 20px;
-            color: #ff007f; 
+            color: #d48a89; 
         }
 
         .info-container ul {
             padding-left: 20px;
             margin: 0 0 25px 0;
-            color: #111;
+            color: #444;
             font-size: 14px;
-            line-height: 1.6;
-            font-weight: 600;
+            line-height: 1.7;
+            font-weight: 500;
             text-align: left;
             width: 100%;
         }
@@ -117,31 +121,36 @@
         }
 
         .info-container li::marker {
-            color: #ff007f; 
+            color: #F7CAC9; 
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .info-container a {
-            color: #ff007f; 
+            color: #d48a89; 
             text-decoration: none;
             font-weight: 800;
             transition: color 0.3s ease;
+            border-bottom: 1px solid transparent;
         }
 
         .info-container a:hover {
-            color: #ff66b2; 
-            text-decoration: underline;
+            color: #e85d75; 
+            border-bottom: 1px solid #e85d75;
         }
 
         .notion-link {
             font-size: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            background: rgba(247, 202, 201, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(247, 202, 201, 0.5);
         }
 
         .calculator-container {
-            padding: 40px 30px;
-            max-width: 380px;
+            padding: 45px 35px;
+            max-width: 400px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -163,20 +172,19 @@
             color: #222;
             font-weight: 600;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            background: #fff;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
             font-family: 'Poppins', sans-serif;
         }
 
         input:focus {
-            border-color: #ff66b2; 
-            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
-            background: #ffffff;
+            border-color: #F7CAC9; 
+            box-shadow: 0 0 15px rgba(247, 202, 201, 0.6);
         }
 
         .error-shake {
             animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
-            border-color: #ff0055 !important;
+            border-color: #e85d75 !important;
         }
 
         @keyframes shake {
@@ -187,10 +195,10 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #ff66b2, #ff007f);
-            color: white;
+            background: #F7CAC9;
+            color: #fff;
             border: none;
-            padding: 16px;
+            padding: 18px;
             border-radius: 14px;
             font-size: 16px;
             font-weight: 800;
@@ -199,14 +207,14 @@
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 6px 15px rgba(255, 0, 127, 0.3);
+            box-shadow: 0 5px 15px rgba(247, 202, 201, 0.5);
             font-family: 'Montserrat', sans-serif;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 0, 127, 0.5);
-            filter: brightness(1.1);
+            background: #e8bdbe;
+            box-shadow: 0 8px 20px rgba(247, 202, 201, 0.7);
         }
 
         .btn-primary:active {
@@ -228,11 +236,11 @@
         }
 
         .result-box {
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            background-color: #fff;
             border-radius: 16px;
-            border: 1px solid rgba(255, 0, 127, 0.4);
-            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.15);
+            border: 1px solid rgba(247, 202, 201, 0.6);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -240,25 +248,25 @@
 
         .result-label {
             font-size: 11px;
-            color: #666;
+            color: #888;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             margin-bottom: 5px;
             font-weight: 700;
         }
 
         .result-value {
-            font-size: 34px;
+            font-size: 36px;
             font-family: 'Montserrat', sans-serif;
-            color: #111;
+            color: #222;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4); }
-            50% { transform: scale(1.03); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.7); }
-            100% { transform: scale(1); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4); }
+            0% { transform: scale(1); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
+            50% { transform: scale(1.03); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
         }
 
         .social-btn.wa {
@@ -287,18 +295,18 @@
         .btn-voltar {
             background: none;
             border: none;
-            color: #555;
+            color: #777;
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 25px;
             text-decoration: underline;
             font-family: 'Poppins', sans-serif;
             transition: color 0.3s ease;
         }
 
         .btn-voltar:hover {
-            color: #ff007f; 
+            color: #d48a89; 
         }
 
         .site-footer {
@@ -306,21 +314,21 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 12px 0;
-            background: rgba(255, 255, 255, 0.25);
+            padding: 5px 0;
+            background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.6);
             text-align: center;
             z-index: 100;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         .footer-link {
-            color: #111;
+            color: #444;
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
             font-size: 12px;
@@ -328,52 +336,29 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
-            text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.8);
         }
 
         .footer-link:hover {
-            color: #ff007f; 
+            color: #d48a89; 
             transform: translateY(-2px);
         }
 
         .footer-separator {
-            color: #333;
+            color: #aaa;
             font-weight: 800;
         }
 
         @media (max-width: 768px) {
-            .info-container {
-                padding: 25px 20px;
-            }
-            .calculator-container {
-                padding: 30px 20px;
-            }
-            h1.main-title {
-                font-size: 26px;
-            }
-            .info-container h2 {
-                font-size: 18px;
-            }
-            .info-container ul {
-                font-size: 12px;
-            }
-            .info-container li {
-                margin-bottom: 10px;
-            }
-            .notion-link {
-                font-size: 13px;
-                margin-bottom: 20px;
-            }
-            .result-value {
-                font-size: 28px;
-            }
-            .site-footer {
-                gap: 12px;
-                padding: 10px 0;
-            }
-            .footer-link {
-                font-size: 10px;
-            }
+            .info-container { padding: 30px 20px; }
+            .calculator-container { padding: 35px 20px; }
+            h1.main-title { font-size: 28px; }
+            .info-container h2 { font-size: 18px; }
+            .info-container ul { font-size: 13px; }
+            .info-container li { margin-bottom: 12px; }
+            .profile-img { width: 100%; height: auto; max-height: 180px; }
+            .result-value { font-size: 30px; }
+            .site-footer { gap: 5px; padding: 12px 0; }
+            .footer-link { font-size: 11px; }
         }
     </style>
 </head>
@@ -383,7 +368,7 @@
         <div class="glass-panel info-container">
             <h1 class="main-title">POCAMARKET</h1>
             <div class="handle">@mletxi</div>
-            <img src="img/eed98360-f97c-445d-b936-f9a50be92176.jpeg" alt="Logo" class="profile-img">
+            <img src="img/b48db6f4-22ec-4d90-aa97-8b0abe5b05a9.jpeg" alt="Logo" class="profile-img">
             
             <h2>Como Comprar & Regras</h2>
             <ul>
@@ -410,7 +395,7 @@
         <div class="glass-panel calculator-container" id="c">
             <h1 class="main-title">CALCULADORA</h1>
             <div class="handle">@mletxi</div>
-            <img src="img/eed98360-f97c-445d-b936-f9a50be92176.jpeg" alt="Logo" class="profile-img">
+            
             
             <input type="number" id="v" placeholder="Digite o valor" step="any">
             <button class="btn-primary" id="b">Calcular</button>
